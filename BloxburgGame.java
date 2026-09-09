@@ -8,6 +8,3 @@ public class BloxburgGame
         pizzaPlace.payTaxes();
     }
 }
-        
-    }
-}
