@@ -11,9 +11,20 @@ class Business {
         this.funds = funds;
         totalBusinesses++;
     }
+
+    public static int getTotalBusinesses() {
+        return totalBusinesses;
+    }
+
  
     public void payTaxes() {
         funds -= funds * TAX_RATE;
+    }
+
+    public void display() {
+        System.out.println("Business: " + name);
+        System.out.println("Owner: " + owner);
+        System.out.println("Funds: $" + funds);
     }
  
     class Employee {
