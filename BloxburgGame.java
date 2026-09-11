@@ -4,7 +4,8 @@ public class BloxburgGame
     public static void main (String[] args)
     {
         // Instantiated businesses + testing for the totalBusinesses to be counted
-
+        
+        Business waterPark = new Business("Tropic Lands");
         Business pizzaPlace = new Business("Pizza Palace", "Alex", 5000);
         Business storePlace = new Business("Scrambler Arena", "George", 7500);
 
@@ -26,6 +27,13 @@ public class BloxburgGame
 
         // First business results
         System.out.println();
+        waterPark.display();
+        System.out.println("This project has yet to be greenlighted and owned.");
+
+        
+
+        // Second business results
+        System.out.println("----");
         pizzaPlace.display();
 
         System.out.println();
@@ -33,7 +41,7 @@ public class BloxburgGame
         pizzaEmployee2.display();
         pizzaEmployee3.display();
 
-        // Second business results
+        // Third business results
         System.out.println("----");
         storePlace.display();
 

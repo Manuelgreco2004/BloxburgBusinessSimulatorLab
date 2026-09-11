@@ -4,14 +4,28 @@ class Business {
     private double funds;
     private static int totalBusinesses = 0;
     public static final double TAX_RATE = 0.3;
+
+    // Overloaded constructor for a business name that is a "project"
+    public Business(String name){
+        this.name = name;
+        totalBusinesses++;
+    }
+    
+    // Overloaded constructor for a business name that has been greenlighted and is searching for a owner to take hold of
+    public Business(String name, double funds){
+        this.name = name;
+        this.funds = funds;
+        totalBusinesses++;
+
+    }
  
+    // The actual constructor for creating businesses
     public Business(String name, String owner, double funds) {
         this.name = name;
         this.owner = owner;
         this.funds = funds;
         totalBusinesses++;
     }
-    
     // Returning the calculation of how many businesses there are for the main class
     public static int getTotalBusinesses() {
         return totalBusinesses;
