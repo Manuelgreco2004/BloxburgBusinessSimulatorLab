@@ -3,7 +3,7 @@ class Business {
     private String owner;
     private double funds;
     private static int totalBusinesses = 0;
-    public static final double TAX_RATE = 0.1;
+    public static final double TAX_RATE = 0.3;
  
     public Business(String name, String owner, double funds) {
         this.name = name;
@@ -11,20 +11,24 @@ class Business {
         this.funds = funds;
         totalBusinesses++;
     }
-
+    
+    // Returning the calculation of how many businesses there are for the main class
     public static int getTotalBusinesses() {
         return totalBusinesses;
     }
 
- 
-    public void payTaxes() {
-        funds -= funds * TAX_RATE;
+
+    // Returning the calculation of the funds after the taxes were done
+    public double payTaxes() {
+        return funds - funds * TAX_RATE;
     }
 
+    // A method for it to be instantiated to BloxburgGame.java for the business display concerning of one
     public void display() {
         System.out.println("Business: " + name);
         System.out.println("Owner: " + owner);
-        System.out.println("Funds: $" + funds);
+        System.out.println("Funds before taxes: $" + funds);
+        System.out.println("Funds after taxes: $" + payTaxes());
     }
  
     class Employee {
@@ -36,6 +40,10 @@ class Business {
             this.name = name;
             this.role = role;
             this.salary = salary;
+        }
+        // Same comment for the business display method, except it is for the employees.
+        public void display() {
+            System.out.println("Employee: " + name + " | " + "Role: " + role + " | " + "Salary: $" + salary + "/hour");
         }
     }
 }
